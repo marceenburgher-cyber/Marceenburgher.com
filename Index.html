@@ -2,120 +2,247 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marceen A. Burgher</title>
+  <title>Marceen Burgher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Marceen Burgher — Founder-led intellectual property and thought leadership platform." />
+
+  <style>
+    :root {
+      --lime: #2fdc8c;
+      --mint: #1fbf9a;
+      --blue: #0b5cff;
+      --yellow: #ffd400;
+      --ink: #0b1f16;
+      --gray: #5f6f68;
+      --bg: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    header {
+      border-bottom: 2px solid var(--lime);
+      padding: 20px 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 16px;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: var(--gray);
+      font-size: 18px;
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .band {
+      border-left: 6px solid var(--mint);
+      padding: 24px;
+      background: #f4fffb;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      border: 1px solid #e2e8e5;
+      padding: 24px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .contact-actions {
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      margin-right: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid var(--lime);
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    .btn-primary {
+      background: var(--lime);
+      color: #002417;
+      border-color: var(--lime);
+    }
+
+    footer {
+      border-top: 1px solid #e2e8e5;
+      padding: 24px 0;
+      font-size: 14px;
+      color: var(--gray);
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Marceen A. Burgher</h1>
-<h2>Decision Frameworks · Venture Strategy · Applied AI Systems</h2>
+<header id="top">
+  <div class="container">
+    <nav>
+      <strong>Marceen Burgher</strong>
+      <div>
+        <a href="#writing">Writing</a>
+        <a href="#frameworks">Frameworks</a>
+        <a href="#venture">Venture Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-<p>
-I build decision frameworks, venture strategy, and AI systems that convert complexity into clarity
-and strategy into execution—credibly, decisively, and at scale.
-</p>
+<main>
 
-<hr />
+  <section class="hero">
+    <div class="container">
+      <h1>I build systems that help people stop surviving and start functioning.</h1>
+      <p>
+        Marceen Burgher is a founder, author, and systems builder working at the intersection
+        of human behavior, governance, and operational clarity.
+      </p>
+    </div>
+  </section>
 
-<h2>About</h2>
-<p>
-I design structured ways to think, decide, and act in environments where ambiguity, risk, and
-consequence intersect. My work spans venture strategy, talent intelligence, coaching systems,
-emergency management, and strategic business planning—bridging insight with execution and vision
-with operational reality.
-</p>
-<p>
-My approach is direct, structured, and outcomes-driven. I operate best where discernment,
-accountability, and momentum matter more than performative process.
-</p>
+  <section>
+    <div class="container band">
+      <p>
+        I do not romanticize chaos. I study it—and build structure where truth
+        is required to survive.
+      </p>
+    </div>
+  </section>
 
-<hr />
+  <section id="writing">
+    <div class="container">
+      <h2>Writing</h2>
+      <p>
+        Books, essays, and excerpts focused on power, boundaries, and decision integrity.
+      </p>
+    </div>
+  </section>
 
-<h2>Primary Outputs</h2>
-<ul>
-  <li>Venture Strategy</li>
-  <li>Decision Frameworks</li>
-  <li>Books</li>
-  <li>Whitepapers</li>
-</ul>
+  <section id="frameworks">
+    <div class="container">
+      <h2>Frameworks</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>S.I.G.H.</h3>
+          <p>Self-awareness, Integrity with self, Gearing up, Honesty with self.</p>
+        </div>
+        <div class="card">
+          <h3>T.I.C.K.</h3>
+          <p>Pattern recognition for inconsistent or unavailable behavior.</p>
+        </div>
+        <div class="card">
+          <h3>NOVA™</h3>
+          <p>Structured transformation from insight to execution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<hr />
+  <section id="venture">
+    <div class="container">
+      <h2>Venture Work</h2>
+      <p>
+        Founder of SkillVantage Enterprise and Nutmeg Project — a hybrid civic and
+        social-impact initiative.
+      </p>
+    </div>
+  </section>
 
-<h2>Books</h2>
-<ul>
-  <li><em>Patterns, Pain, and Power™: A Woman’s Guide to Choosing Herself</em></li>
-  <li><em>The Unavailable Guy Detox Guide™</em> — Supplemental workbook</li>
-  <li><em>Heaven Knows, Pentameters and Verses: Finding My Voice and Solace in Writing</em></li>
-</ul>
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p>
+        This site serves as my personal intellectual property and thought leadership
+        platform, separate from but connected to my enterprise and civic work.
+      </p>
+    </div>
+  </section>
 
-<h3>Curry Pumpkin Pie Children’s Book Series</h3>
-<ul>
-  <li>The Blue Guitar</li>
-  <li>The Golden Curtain</li>
-  <li>Snowflakes (coming soon)</li>
-  <li>Inside the Shoe (coming soon)</li>
-  <li>The Mystery of the Two Little Teddy Bears (coming soon)</li>
-  <li>The Big Adventure</li>
-</ul>
+  <section id="contact">
+    <div class="container band">
+      <h2>Contact Marceen Burgher</h2>
+      <p>
+        For writing, speaking, or venture-related inquiries, please use the contact
+        button below. Messages are delivered directly.
+      </p>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:marceenburgher@gmail.com">Send a message</a>
+        <a class="btn" href="#top">Return to top</a>
+        <a class="btn" href="#about">Read about</a>
+      </div>
+    </div>
+  </section>
 
-<hr />
-
-<h2>Whitepapers</h2>
-<ul>
-  <li>
-    <em>The Future of Talent Intelligence:</em>
-    How AI, Behavioral Science, and Human-Centered Data Will Redefine Workforces by 2030 and Beyond
-  </li>
-</ul>
-
-<hr />
-
-<h2>Decision Frameworks &amp; Intellectual Property</h2>
-<ul>
-  <li>N.O.V.A.™ (co-developed with Geeta Trikha)</li>
-  <li>S.I.G.H.™</li>
-  <li>T.I.C.K.™</li>
-  <li>Relational Operating System™</li>
-  <li>Pattern Disruption™</li>
-  <li>Unilateral Accountability Syndrome™</li>
-  <li>Unavailable Guy Detox Guide (Framework)</li>
-</ul>
-
-<hr />
-
-<h2>Current AI Creations</h2>
-<ul>
-  <li><strong>AI-Powered Talent Intelligence Database &amp; Social Network</strong></li>
-  <li><strong>AI Coaching &amp; Learning Management System (LMS)</strong></li>
-  <li><strong>AI Emergency Management Scorecard Platform</strong></li>
-</ul>
-
-<hr />
-
-<h2>Working Style</h2>
-<p>
-Direct, structured, and outcomes-based. I specialize in evaluating ideas quickly, identifying viable
-paths forward, and mobilizing action in complex, high-stakes environments.
-</p>
-
-<hr />
-
-<h2>How I Work With Teams</h2>
-<p>
-I partner with founders, executives, and leadership teams to bring structure to ambiguity and
-momentum to strategy. Engagements are milestone-driven, accountability-oriented, and focused on
-credible execution.
-</p>
-
-<hr />
+</main>
 
 <footer>
-  <p>
-    © 2026 Marceen A. Burgher. All rights reserved.<br />
-    All frameworks and systems referenced are proprietary intellectual property.
-    ™ indicates trademarked frameworks.
-  </p>
+  <div class="container">
+    © <span id="year"></span> Marceen Burgher. All rights reserved.
+  </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
