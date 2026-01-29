@@ -1,131 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Marceen Burgher</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Marceen Burgher — Founder-led intellectual property and thought leadership platform." />
+  <title>Marceen Burgher</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --lime: #2fdc8c;
-      --mint: #1fbf9a;
-      --blue: #0b5cff;
-      --yellow: #ffd400;
-      --ink: #0b1f16;
-      --gray: #5f6f68;
-      --bg: #ffffff;
+    :root{
+      --mint:#10b86b;
+      --mint-soft:#e8fff2;
+      --blue:#0b5cff;
+      --yellow:#ffd400;
+      --ink:#07120e;
+      --gray:#4b5c55;
+      --bg:#ffffff;
     }
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,var(--mint-soft),#ffffff 60%);
+      line-height:1.6;
     }
 
-    header {
-      border-bottom: 2px solid var(--lime);
-      padding: 20px 0;
+    a{text-decoration:none;color:inherit}
+
+    .container{
+      max-width:1100px;
+      margin:0 auto;
+      padding:0 24px;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
+    header{
+      background:#ffffffcc;
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid #dfeee6;
+      position:sticky;
+      top:0;
+      z-index:10;
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 0;
     }
 
-    nav a {
-      margin-left: 16px;
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 600;
+    nav strong{
+      font-weight:700;
+      letter-spacing:-0.02em;
     }
 
-    nav a:hover {
-      color: var(--blue);
+    nav a{
+      margin-left:18px;
+      font-weight:600;
+      color:#30463e;
     }
 
-    .hero {
-      padding: 72px 0 48px;
+    nav a:hover{color:var(--blue)}
+
+    .hero{
+      padding:80px 0 50px;
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
+    h1{
+      font-family:Fraunces,serif;
+      font-size:48px;
+      line-height:1.05;
+      letter-spacing:-0.03em;
+      margin-bottom:16px;
     }
 
-    .hero p {
-      max-width: 720px;
-      color: var(--gray);
-      font-size: 18px;
+    .hero p{
+      max-width:720px;
+      font-size:18px;
+      color:var(--gray);
     }
 
-    section {
-      padding: 56px 0;
+    section{padding:56px 0}
+
+    .band{
+      background:linear-gradient(135deg,#dfffee,#f3f7ff);
+      border-left:6px solid var(--mint);
+      padding:28px;
     }
 
-    h2 {
-      font-size: 28px;
-      margin-bottom: 16px;
+    h2{
+      font-size:26px;
+      margin-bottom:14px;
     }
 
-    .band {
-      border-left: 6px solid var(--mint);
-      padding: 24px;
-      background: #f4fffb;
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:24px;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
+    .card{
+      background:#ffffff;
+      border:1px solid #dfeee6;
+      padding:24px;
     }
 
-    .card {
-      border: 1px solid #e2e8e5;
-      padding: 24px;
+    .card h3{margin-top:0}
+
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      margin-right:12px;
+      border:2px solid var(--mint);
+      font-weight:600;
     }
 
-    .card h3 {
-      margin-top: 0;
+    .btn-primary{
+      background:var(--mint);
+      color:#062018;
     }
 
-    .contact-actions {
-      margin-top: 24px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      margin-right: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      border: 2px solid var(--lime);
-      color: var(--ink);
-      background: #ffffff;
-    }
-
-    .btn-primary {
-      background: var(--lime);
-      color: #002417;
-      border-color: var(--lime);
-    }
-
-    footer {
-      border-top: 1px solid #e2e8e5;
-      padding: 24px 0;
-      font-size: 14px;
-      color: var(--gray);
+    footer{
+      border-top:1px solid #dfeee6;
+      padding:28px 0;
+      font-size:14px;
+      color:#5f6f68;
     }
   </style>
 </head>
@@ -139,7 +142,7 @@
       <div>
         <a href="#writing">Writing</a>
         <a href="#frameworks">Frameworks</a>
-        <a href="#venture">Venture Work</a>
+        <a href="#venture">Venture</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
@@ -149,99 +152,95 @@
 
 <main>
 
-  <section class="hero">
-    <div class="container">
-      <h1>I build systems that help people stop surviving and start functioning.</h1>
-      <p>
-        Marceen Burgher is a founder, author, and systems builder working at the intersection
-        of human behavior, governance, and operational clarity.
-      </p>
-    </div>
-  </section>
+<section class="hero">
+  <div class="container">
+    <h1>I build systems that help people stop surviving and start functioning.</h1>
+    <p>
+      Founder, author, and systems builder working across human behavior,
+      governance, and operational clarity.
+    </p>
+  </div>
+</section>
 
-  <section>
-    <div class="container band">
-      <p>
-        I do not romanticize chaos. I study it—and build structure where truth
-        is required to survive.
-      </p>
-    </div>
-  </section>
+<section>
+  <div class="container band">
+    <p>
+      I do not romanticize chaos. I study it—and build structure where truth
+      is required to survive.
+    </p>
+  </div>
+</section>
 
-  <section id="writing">
-    <div class="container">
-      <h2>Writing</h2>
-      <p>
-        Books, essays, and excerpts focused on power, boundaries, and decision integrity.
-      </p>
-    </div>
-  </section>
+<section id="writing">
+  <div class="container">
+    <h2>Writing</h2>
+    <p>Books, essays, and excerpts on power, boundaries, and decision integrity.</p>
+  </div>
+</section>
 
-  <section id="frameworks">
-    <div class="container">
-      <h2>Frameworks</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>S.I.G.H.</h3>
-          <p>Self-awareness, Integrity with self, Gearing up, Honesty with self.</p>
-        </div>
-        <div class="card">
-          <h3>T.I.C.K.</h3>
-          <p>Pattern recognition for inconsistent or unavailable behavior.</p>
-        </div>
-        <div class="card">
-          <h3>NOVA™</h3>
-          <p>Structured transformation from insight to execution.</p>
-        </div>
+<section id="frameworks">
+  <div class="container">
+    <h2>Frameworks</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>S.I.G.H.</h3>
+        <p>Self-awareness, Integrity with self, Gearing up, Honesty with self.</p>
+      </div>
+      <div class="card">
+        <h3>T.I.C.K.</h3>
+        <p>Pattern recognition for inconsistent behavior.</p>
+      </div>
+      <div class="card">
+        <h3>NOVA™</h3>
+        <p>Structured transformation from insight to execution.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="venture">
-    <div class="container">
-      <h2>Venture Work</h2>
-      <p>
-        Founder of SkillVantage Enterprise and Nutmeg Project — a hybrid civic and
-        social-impact initiative.
-      </p>
-    </div>
-  </section>
+<section id="venture">
+  <div class="container">
+    <h2>Venture Work</h2>
+    <p>
+      Founder of SkillVantage Enterprise and Nutmeg Project —
+      a hybrid civic and social-impact initiative.
+    </p>
+  </div>
+</section>
 
-  <section id="about">
-    <div class="container">
-      <h2>About</h2>
-      <p>
-        This site serves as my personal intellectual property and thought leadership
-        platform, separate from but connected to my enterprise and civic work.
-      </p>
-    </div>
-  </section>
+<section id="about">
+  <div class="container">
+    <h2>About</h2>
+    <p>
+      MarceenBurgher.com is my personal intellectual property and thought
+      leadership platform, separate from enterprise execution.
+    </p>
+  </div>
+</section>
 
-  <section id="contact">
-    <div class="container band">
-      <h2>Contact Marceen Burgher</h2>
-      <p>
-        For writing, speaking, or venture-related inquiries, please use the contact
-        button below. Messages are delivered directly.
-      </p>
-      <div class="contact-actions">
-        <a class="btn btn-primary" href="mailto:marceenburgher@gmail.com">Send a message</a>
-        <a class="btn" href="#top">Return to top</a>
-        <a class="btn" href="#about">Read about</a>
-      </div>
-    </div>
-  </section>
+<section id="contact">
+  <div class="container band">
+    <h2>Contact Marceen Burgher</h2>
+    <p>
+      For writing, speaking, or venture-related inquiries, use the button below.
+      Messages are delivered directly.
+    </p>
+    <a class="btn btn-primary" href="mailto:marceenburgher@gmail.com">Send a message</a>
+    <a class="btn" href="#top">Return to top</a>
+    <a class="btn" href="#about">Read about</a>
+  </div>
+</section>
 
 </main>
 
 <footer>
   <div class="container">
-    © <span id="year"></span> Marceen Burgher. All rights reserved.
+    © <span id="y"></span> Marceen Burgher
   </div>
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  document.getElementById("y").textContent = new Date().getFullYear();
 </script>
 
 </body>
