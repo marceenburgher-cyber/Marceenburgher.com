@@ -4,215 +4,694 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Marceen Burgher</title>
-  <meta name="description" content="Marceen A. Burgher, MBA, MHRM — Strategic thought leader building AI-enabled talent intelligence systems." />
+  <meta name="description" content="Marceen Burgher — Founder, author, and systems builder. Writing, frameworks, and venture work." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --mint:#10b86b; --mint-soft:#e8fff2; --blue:#0b5cff; --yellow:#ffd400;
-      --ink:#07120e; --gray:#4b5c55; --bg:#ffffff;
-      --radius-xl:28px; --radius-lg:18px;
-      --shadow:0 18px 55px rgba(7,18,14,.18);
-      --shadow-soft:0 10px 30px rgba(7,18,14,.12);
-      --maxw:1160px; --pad:clamp(18px,4vw,34px);
+      /* Dominant mint/lime system */
+      --mint-950:#052a1e;
+      --mint-900:#063524;
+      --mint-800:#0a4a34;
+      --mint-700:#0d6142;
+      --mint-600:#0e7a4f;
+      --mint-500:#10b86b;   /* dominant */
+      --mint-400:#22d67a;
+      --mint-300:#6ef0a9;
+      --mint-200:#bff7d6;
+      --mint-100:#e8fff2;
+
+      --blue-700:#0a4ad9;
+      --blue-600:#0b5cff;
+      --yellow-500:#ffd400;
+      --ink:#07120e;
+      --slate:#2a3a33;
+      --paper:#ffffff;
+
+      --radius-xl:28px;
+      --radius-lg:18px;
+      --radius-md:14px;
+      --shadow: 0 18px 55px rgba(7, 18, 14, .18);
+      --shadow-soft: 0 10px 30px rgba(7, 18, 14, .12);
+      --border: 1px solid rgba(7, 18, 14, .10);
+
+      --maxw: 1160px;
+      --gutter: clamp(18px, 4vw, 34px);
     }
+
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       color:var(--ink);
       background:
         radial-gradient(900px 500px at 80% 10%, rgba(16,184,107,.35), transparent 62%),
         radial-gradient(700px 420px at 15% 15%, rgba(11,92,255,.12), transparent 60%),
-        linear-gradient(180deg,var(--mint-soft),var(--bg) 55%);
-      line-height:1.6;
+        linear-gradient(180deg, rgba(232,255,242,.95), var(--paper) 52%);
     }
-    a{text-decoration:none;color:inherit}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
-    header{
-      position:sticky;top:0;z-index:10;
-      backdrop-filter:blur(12px);
-      background:#ffffffcc;border-bottom:1px solid #dfeee6;
+
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter)}
+
+    /* Header */
+    .topbar{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.78);
+      border-bottom: 1px solid rgba(7,18,14,.08);
     }
-    nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-    nav strong{font-weight:700;letter-spacing:-.02em}
-    nav a{margin-left:18px;font-weight:600;color:#30463e}
-    nav a:hover{color:var(--blue)}
-    .hero{padding:70px 0 40px}
-    h1{
-      font-family:Fraunces,serif;font-size:clamp(38px,4.6vw,56px);
-      line-height:1.05;letter-spacing:-.03em;margin-bottom:16px;
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 16px 0;
+      gap: 18px;
     }
-    .hero p{max-width:760px;font-size:18px;color:var(--gray)}
-    section{padding:48px 0}
-    .band{
-      background:linear-gradient(135deg,#dfffee,#f3f7ff);
-      border-left:6px solid var(--mint);
-      padding:26px;border-radius:var(--radius-lg);
-      box-shadow:var(--shadow-soft);
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700;
+      letter-spacing:-0.02em;
     }
-    h2{font-size:26px;margin-bottom:14px;letter-spacing:-.02em}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-    .card{
-      background:#fff;border:1px solid #dfeee6;
-      padding:22px;border-radius:var(--radius-lg);
-      box-shadow:var(--shadow-soft);
+    .mark{
+      width: 34px; height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--mint-500), var(--blue-600));
+      box-shadow: 0 10px 25px rgba(16,184,107,.35);
+      position:relative;
+      overflow:hidden;
     }
-    .card h3{margin-top:0}
+    .mark:after{
+      content:"";
+      position:absolute; inset:-30%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,212,0,.65), transparent 52%);
+      transform: rotate(18deg);
+    }
+
+    .navlinks{display:flex; gap: 18px; align-items:center; flex-wrap:wrap}
+    .navlinks a{
+      font-size: 14px;
+      color: rgba(7,18,14,.78);
+      padding: 10px 10px;
+      border-radius: 12px;
+    }
+    .navlinks a:hover{
+      background: rgba(16,184,107,.10);
+      color: rgba(7,18,14,.95);
+    }
+
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
     .btn{
-      display:inline-block;padding:12px 18px;margin-right:12px;
-      border:2px solid var(--mint);font-weight:600;border-radius:14px;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 11px 14px;
+      border-radius: 14px;
+      border: var(--border);
+      font-weight: 600;
+      font-size: 14px;
+      color: rgba(7,18,14,.92);
+      background: rgba(255,255,255,.80);
+      box-shadow: 0 8px 20px rgba(7,18,14,.08);
+      transition: transform .12s ease, box-shadow .12s ease;
+      white-space:nowrap;
     }
-    .btn-primary{background:var(--mint);color:#062018}
-    footer{border-top:1px solid #dfeee6;padding:28px 0;font-size:14px;color:#5f6f68}
+    .btn:hover{transform: translateY(-1px); box-shadow: 0 14px 30px rgba(7,18,14,.12)}
+    .btn-primary{
+      border: none;
+      background: linear-gradient(135deg, var(--mint-500), var(--mint-400));
+      color: #062018;
+      box-shadow: 0 18px 50px rgba(16,184,107,.35);
+    }
+    .btn-primary:hover{box-shadow: 0 22px 60px rgba(16,184,107,.42)}
+
+    /* Hero */
+    .hero{padding: 60px 0 30px}
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.25fr .9fr;
+      gap: 34px;
+      align-items:stretch;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(16,184,107,.16);
+      color: rgba(6,32,24,.92);
+      font-weight: 600;
+      font-size: 13px;
+      border: 1px solid rgba(16,184,107,.28);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:99px;
+      background: var(--yellow-500);
+      box-shadow: 0 0 0 6px rgba(255,212,0,.20);
+    }
+    h1{
+      font-family: Fraunces, ui-serif, Georgia, serif;
+      font-size: clamp(36px, 4.6vw, 56px);
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+      margin: 18px 0 12px;
+    }
+    .lead{
+      font-size: 16.5px;
+      line-height: 1.65;
+      color: rgba(7,18,14,.78);
+      max-width: 62ch;
+      margin: 0 0 18px;
+    }
+
+    .hero-actions{display:flex; gap: 12px; flex-wrap:wrap; margin-top: 18px}
+    .quicklinks{display:flex; gap: 14px; flex-wrap:wrap; margin-top: 18px}
+    .linkpill{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(7,18,14,.12);
+      background: rgba(255,255,255,.80);
+      color: rgba(7,18,14,.88);
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+    .linkpill:hover{border-color: rgba(16,184,107,.35)}
+    .arrow{font-weight:800; color: var(--blue-600)}
+
+    .hero-card{
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.72));
+      border: 1px solid rgba(7,18,14,.10);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      position:relative;
+      overflow:hidden;
+      min-height: 320px;
+    }
+    .hero-card:before{
+      content:"";
+      position:absolute;
+      inset:-45% -40% auto auto;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle at 30% 30%, rgba(16,184,107,.75), transparent 55%),
+                  radial-gradient(circle at 62% 60%, rgba(11,92,255,.22), transparent 60%),
+                  radial-gradient(circle at 20% 70%, rgba(255,212,0,.40), transparent 58%);
+      transform: rotate(-10deg);
+      filter: saturate(1.15);
+    }
+    .hero-card-inner{position:relative; z-index:1}
+    .statgrid{display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px}
+    .stat{
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(7,18,14,.10);
+      background: rgba(255,255,255,.78);
+      padding: 14px;
+      box-shadow: var(--shadow-soft);
+    }
+    .stat .label{font-size: 12px; color: rgba(7,18,14,.62); font-weight: 600}
+    .stat .value{font-size: 18px; font-weight: 800; margin-top: 6px; letter-spacing: -0.02em}
+    .stat .note{font-size: 12px; color: rgba(7,18,14,.66); margin-top: 6px; line-height:1.35}
+
+    .mini{
+      margin-top: 14px;
+      border-radius: var(--radius-lg);
+      padding: 14px;
+      background: rgba(6,53,36,.08);
+      border: 1px solid rgba(16,184,107,.20);
+    }
+    .mini h3{margin:0 0 6px; font-size: 14px; letter-spacing:-0.01em}
+    .mini p{margin:0; font-size: 13px; line-height: 1.55; color: rgba(7,18,14,.70)}
+
+    /* Section base */
+    section{padding: 42px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .section-title h2{
+      margin:0;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+    }
+    .section-title .hint{font-size: 13px; color: rgba(7,18,14,.65)}
+
+    /* Stance band */
+    .band{
+      border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, rgba(16,184,107,.16), rgba(11,92,255,.10));
+      border: 1px solid rgba(7,18,14,.10);
+      padding: 22px;
+      box-shadow: var(--shadow-soft);
+    }
+    .band .quote{
+      font-family: Fraunces, ui-serif, Georgia, serif;
+      font-size: clamp(22px, 2.5vw, 30px);
+      letter-spacing:-0.02em;
+      line-height: 1.25;
+      margin:0;
+    }
+    .band .sub{
+      margin-top: 10px;
+      color: rgba(7,18,14,.72);
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 92ch;
+    }
+
+    /* Cards */
+    .cards{display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px}
+    .card{
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(7,18,14,.10);
+      box-shadow: var(--shadow-soft);
+      padding: 18px;
+      position:relative;
+      overflow:hidden;
+      transition: transform .12s ease, box-shadow .12s ease;
+      min-height: 160px;
+    }
+    .card:hover{transform: translateY(-2px); box-shadow: var(--shadow)}
+    .card:before{
+      content:"";
+      position:absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--mint-500), var(--yellow-500), var(--blue-600));
+    }
+    .card h3{margin: 8px 0 8px; font-size: 16px; letter-spacing:-0.02em}
+    .card p{margin:0; color: rgba(7,18,14,.72); line-height: 1.6; font-size: 13.5px}
+    .card .go{margin-top: 14px; display:inline-flex; gap:10px; align-items:center; font-weight:700; font-size: 13.5px; color: var(--blue-600)}
+
+    /* Featured list */
+    .featured{
+      border-radius: var(--radius-xl);
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(7,18,14,.10);
+      box-shadow: var(--shadow-soft);
+      overflow:hidden;
+    }
+    .row{
+      display:grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 16px;
+      padding: 16px 18px;
+      align-items:center;
+      border-top: 1px solid rgba(7,18,14,.08);
+    }
+    .row:first-child{border-top:none}
+    .tag{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+      color: #062018;
+      background: rgba(255,212,0,.72);
+      border: 1px solid rgba(255,212,0,.55);
+      width: fit-content;
+    }
+    .title{font-weight: 800; letter-spacing:-0.02em}
+    .desc{margin-top: 4px; color: rgba(7,18,14,.70); font-size: 13.5px; line-height:1.55}
+    .row a{color: var(--blue-600); font-weight: 800; font-size: 13.5px}
+    .row a:hover{text-decoration: underline}
+
+    /* About block */
+    .about{
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255,255,255,.90), rgba(232,255,242,.55));
+      border: 1px solid rgba(7,18,14,.10);
+      box-shadow: var(--shadow-soft);
+      padding: 22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items:start;
+    }
+    .about h2{margin:0 0 8px; font-size: 20px; letter-spacing:-0.02em}
+    .about p{margin:0 0 10px; color: rgba(7,18,14,.74); line-height: 1.7; font-size: 14px}
+    .about .bullets{margin: 12px 0 0; padding: 0; list-style:none; display:grid; gap:10px}
+    .about .bullets li{
+      padding: 12px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(7,18,14,.10);
+      background: rgba(255,255,255,.78);
+    }
+    .about .bullets .k{font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing:.06em; color: rgba(7,18,14,.62)}
+    .about .bullets .v{margin-top: 6px; font-weight: 700; letter-spacing:-0.01em}
+
+    /* Footer */
+    footer{padding: 28px 0 50px; color: rgba(7,18,14,.70)}
+    .foot{
+      display:flex; justify-content:space-between; align-items:center; gap: 18px; flex-wrap:wrap;
+      border-top: 1px solid rgba(7,18,14,.10);
+      padding-top: 18px;
+    }
+    .foot a{color: rgba(7,18,14,.78)}
+    .foot a:hover{color: rgba(7,18,14,.96); text-decoration: underline}
+    .small{font-size: 12.5px; line-height:1.45}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr;}
+      .about{grid-template-columns: 1fr;}
+      .cards{grid-template-columns: 1fr;}
+      .row{grid-template-columns: 1fr;}
+      .cta{display:none;}
+    }
   </style>
 </head>
 
 <body>
-<header id="top">
-  <div class="container">
-    <nav>
-      <strong>Marceen Burgher</strong>
-      <div>
-        <a href="#writing">Writing</a>
-        <a href="#frameworks">Frameworks</a>
-        <a href="#venture">Venture</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-  </div>
-</header>
+  <header class="topbar">
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Home">
+          <span class="mark" aria-hidden="true"></span>
+          <span>Marceen Burgher</span>
+        </a>
 
-<main>
+        <nav class="navlinks" aria-label="Primary">
+          <a href="#writing">Writing</a>
+          <a href="#frameworks">Frameworks</a>
+          <a href="#venture">Venture Work</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
-<section class="hero">
-  <div class="container">
-    <h1>I build systems that help people stop surviving and start functioning.</h1>
-    <p>
-      Founder, strategic thought leader, and systems builder working at the intersection
-      of AI, behavioral science, and workforce intelligence.
-    </p>
-  </div>
-</section>
-
-<section>
-  <div class="container band">
-    <p>
-      I don’t romanticize chaos. I study it—and build structure where truth is required to survive.
-    </p>
-  </div>
-</section>
-
-<section id="writing">
-  <div class="container">
-    <h2>Writing & Research</h2>
-    <p>
-      Books, essays, and applied research on power, boundaries, governance, and the future of work.
-    </p>
-    <p>
-      Current work includes <strong>THE FUTURE OF TALENT INTELLIGENCE: A SkillVantage White Paper</strong>.
-    </p>
-  </div>
-</section>
-
-<section id="frameworks">
-  <div class="container">
-    <h2>Frameworks</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>S.I.G.H.™</h3>
-        <p>
-          Self-awareness · Integrity with self · Gearing up to make the right decision · Honesty with self.
-        </p>
-      </div>
-      <div class="card">
-        <h3>T.I.C.K.™</h3>
-        <p>
-          Trust · Integrity · Communication · Knowledge.
-        </p>
-      </div>
-      <div class="card">
-        <h3>NOVA™</h3>
-        <p>
-          A structured transformation framework for moving from insight to execution.<br/>
-          <em>Contributors: Marceen Burgher (lead), Geeta Trikha</em>
-        </p>
+        <div class="cta">
+          <a class="btn" href="#contact">Inquiries</a>
+          <a class="btn btn-primary" href="#writing">Read the Work</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="venture">
-  <div class="container">
-    <h2>Venture Work</h2>
-    <p>
-      Founder of SkillVantage Enterprise and Nutmeg Project—building AI-powered systems
-      across talent intelligence, compliance, workforce analytics, and civic resilience.
-    </p>
-  </div>
-</section>
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="kicker"><span class="dot" aria-hidden="true"></span>Founder • Author • Systems Builder</div>
+            <h1>I build systems that help people stop surviving and start functioning.</h1>
+            <p class="lead">
+              My work spans writing, decision frameworks, and venture-building across HR, compliance, workforce intelligence, and automation.
+              The through-line is practical: clarity becomes protection.
+            </p>
 
-<section id="about">
-  <div class="container">
-    <h2>About Marceen</h2>
-    <p>
-      <strong>Marceen A. Burgher, MBA, MHRM</strong> is a strategic thought leader and founder building
-      AI-enabled talent intelligence systems designed to hold under pressure. Her work integrates
-      behavioral science, human-centered data, and operational governance to reduce ambiguity and
-      strengthen decision integrity across organizations.
-    </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#writing">Explore Writing</a>
+              <a class="btn" href="#about">About Marceen</a>
+              <a class="btn" href="#contact">Request a Conversation</a>
+            </div>
 
-    <p>
-      As Founder & CEO of SkillVantage Enterprise, she is developing an AI product ecosystem rooted
-      in Talent Intelligence—advancing SkillVantage’s mission to disrupt traditional HR models.
-      This ecosystem includes an AI-powered Talent Database, Social Network Intelligence,
-      a Coaching Platform, and a Learning Management System (LMS), serving as a blueprint for the
-      next generation of workforce transformation. Complementing this work is her development of
-      an <strong>AI-Powered Emergency Management Preparedness Scorecard</strong>, a dashboard designed
-      to improve workforce readiness, compliance visibility, and operational resilience.
-    </p>
+            <div class="quicklinks" aria-label="Quick links">
+              <a class="linkpill" href="#frameworks">Frameworks: S.I.G.H.™, T.I.C.K.™, NOVA™ <span class="arrow">→</span></a>
+              <a class="linkpill" href="#venture">Founder Work: SkillVantage <span class="arrow">→</span></a>
+              <a class="linkpill" href="#writing">Book Excerpts & Essays <span class="arrow">→</span></a>
+            </div>
+          </div>
 
-    <p>
-      Her current research includes <em>THE FUTURE OF TALENT INTELLIGENCE: A SkillVantage White Paper:
-      How AI, Behavioral Science, and Human-Centered Data Will Redefine Workforces by 2030 and Beyond</em>.
-      She also advises small businesses and hybrid initiatives on execution-ready operational and
-      business plans, aligning strategy, delivery, and capital readiness. Her IP roadmap includes
-      patent-supported innovations such as SkillVantage’s Talent Intelligence AI,
-      <strong>Cenna™</strong>, and related automation frameworks.
-    </p>
+          <aside class="hero-card" aria-label="At a glance">
+            <div class="hero-card-inner">
+              <h2 style="margin:0; font-size:16px; letter-spacing:-0.02em;">At a glance</h2>
+              <p style="margin:8px 0 0; color: rgba(7,18,14,.70); font-size:13.5px; line-height:1.55;">
+                A curated home for my writing, frameworks, and venture work—built for readers, partners, and teams who value clear thinking and operational credibility.
+              </p>
 
-    <p>
-      Marceen’s leadership and design approach are reinforced by her Working Genius in
-      Discernment and Galvanizing, alongside CliftonStrengths in Achiever, Learner, Strategic,
-      Responsibility, and Command—reflecting her role as a driving force behind intelligent
-      talent strategy and applied automation.
-    </p>
-  </div>
-</section>
+              <div class="statgrid" style="margin-top:14px;">
+                <div class="stat">
+                  <div class="label">Focus</div>
+                  <div class="value">Systems + Truth</div>
+                  <div class="note">Practical frameworks and applied strategy.</div>
+                </div>
+                <div class="stat">
+                  <div class="label">Workstreams</div>
+                  <div class="value">Writing • Venture</div>
+                  <div class="note">Human behavior + operational delivery.</div>
+                </div>
+                <div class="stat">
+                  <div class="label">Signature</div>
+                  <div class="value">Clarity</div>
+                  <div class="note">Decisions that are clean and defensible.</div>
+                </div>
+                <div class="stat">
+                  <div class="label">Approach</div>
+                  <div class="value">Governance</div>
+                  <div class="note">Structure that holds under pressure.</div>
+                </div>
+              </div>
 
-<section id="contact">
-  <div class="container band">
-    <h2>Contact Marceen Burgher</h2>
-    <p>
-      For writing, speaking, advisory, or venture-related inquiries, use the button below.
-    </p>
-    <a class="btn btn-primary" href="mailto:marceenburgher@gmail.com">Send a message</a>
-    <a class="btn" href="#top">Return to top</a>
-    <a class="btn" href="#about">Read about</a>
-  </div>
-</section>
+              <div class="mini">
+                <h3>For speaking, writing, or venture conversations</h3>
+                <p>Use the button below to send a message directly.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <!-- STANCE BAND -->
+    <section>
+      <div class="container">
+        <div class="band">
+          <p class="quote">I don’t romanticize chaos. I study it—and build structure where truth is required to survive.</p>
+          <p class="sub">
+            This site is a professional archive of my work: writing that names patterns, frameworks that support sound decisions, and venture-building rooted in compliance, governance, and measurable outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <div class="container">
-    © <span id="y"></span> Marceen Burgher · All rights reserved
-  </div>
-</footer>
+    <!-- PATH CARDS -->
+    <section id="writing">
+      <div class="container">
+        <div class="section-title">
+          <h2>Explore the work</h2>
+          <div class="hint">Start where you are: reader, builder, or partner.</div>
+        </div>
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+        <div class="cards">
+          <a class="card" href="#featured" aria-label="Writing">
+            <h3>Writing</h3>
+            <p>Books, excerpts, and essays on power, boundaries, decision fatigue, and repair—written with precision and practical application.</p>
+            <span class="go">Explore writing <span class="arrow">→</span></span>
+          </a>
+
+          <a class="card" href="#frameworks" aria-label="Frameworks">
+            <h3>Frameworks</h3>
+            <p>Decision models such as S.I.G.H.™ that connect self-awareness, regulation, and action—built for real-life use, not theory.</p>
+            <span class="go">Explore frameworks <span class="arrow">→</span></span>
+          </a>
+
+          <a class="card" href="#venture" aria-label="Venture work">
+            <h3>Venture Work</h3>
+            <p>Founder work blending HR-tech, compliance, workforce intelligence, and automation—built for environments where failure is not acceptable.</p>
+            <span class="go">Explore venture work <span class="arrow">→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED LIST -->
+    <section id="featured">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured</h2>
+          <div class="hint">A concise snapshot of what’s active and relevant.</div>
+        </div>
+
+        <div class="featured" role="list">
+          <div class="row" role="listitem">
+            <div><span class="tag">Book</span></div>
+            <div>
+              <div class="title">Passions, Pain, and Power</div>
+              <div class="desc">A non-fiction, real-events-based self-help work focused on relationship fatigue, boundaries, and reclaiming decision integrity.</div>
+            </div>
+            <div><a href="#contact">Request an excerpt →</a></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Framework</span></div>
+            <div>
+              <div class="title">S.I.G.H.™</div>
+              <div class="desc">Self-awareness • Integrity with self • Gearing up to make the right decision • Honesty with self.</div>
+            </div>
+            <div><a href="sigh.html">Read more →</a></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Venture</span></div>
+            <div>
+              <div class="title">SkillVantage (Founder Work)</div>
+              <div class="desc">An HR-tech and services ecosystem that centers governance, compliance visibility, and workforce intelligence—powered by applied automation.</div>
+            </div>
+            <div><a href="#venture">See venture notes →</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAMEWORKS -->
+    <section id="frameworks">
+      <div class="container">
+        <div class="section-title">
+          <h2>Frameworks</h2>
+          <div class="hint">A practical library—built to be used.</div>
+        </div>
+
+        <div class="cards">
+          <a class="card" href="sigh.html" role="article" aria-label="S.I.G.H.">
+            <h3>S.I.G.H.™</h3>
+            <p><strong>S</strong>elf-awareness • <strong>I</strong>ntegrity with self • <strong>G</strong>earing up to make the right decision • <strong>H</strong>onesty with self.</p>
+            <span class="go">Open overview <span class="arrow">→</span></span>
+          </a>
+
+          <a class="card" href="tick.html" role="article" aria-label="T.I.C.K.">
+            <h3>T.I.C.K.™</h3>
+            <p><strong>T</strong>rust • <strong>I</strong>ntegrity • <strong>C</strong>ommunication • <strong>K</strong>nowledge.</p>
+            <span class="go">Open overview <span class="arrow">→</span></span>
+          </a>
+
+          <a class="card" href="nova.html" role="article" aria-label="NOVA">
+            <h3>NOVA™</h3>
+            <p>A structured transformation approach used across coaching and operational systems to move from insight to execution with accountability.</p>
+            <p style="margin-top:10px; font-size:13px; color: rgba(7,18,14,.72)">
+              <strong>Contributors:</strong> Marceen Burgher (lead) • Geeta Trikha (2nd contributor)
+            </p>
+            <span class="go">Open overview <span class="arrow">→</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENTURE (fixed; removed broken placeholders) -->
+    <section id="venture">
+      <div class="container">
+        <div class="section-title">
+          <h2>Venture Work</h2>
+          <div class="hint">Founder work across enterprise and civic systems.</div>
+        </div>
+
+        <div class="band">
+          <p class="quote" style="font-size:22px">Founder work: SkillVantage + Nutmeg Project</p>
+          <p class="sub">
+            SkillVantage focuses on AI-enabled talent intelligence systems including a Talent Database, Social Network Intelligence, Coaching Platform, LMS, and an AI-Powered Emergency Management Preparedness Scorecard.
+            Nutmeg Project is a hybrid civic + social-impact initiative focused on practical support systems and community resilience.
+          </p>
+
+          <div class="mini" style="margin-top:14px; background: rgba(255,255,255,.78); border: 1px solid rgba(7,18,14,.10);">
+            <h3 style="margin:0 0 6px; font-size:14px; letter-spacing:-0.01em;">Nutmeg Project (Hybrid: Civic + Social Impact)</h3>
+            <p style="margin:0; font-size:13px; line-height:1.55; color: rgba(7,18,14,.70)">
+              A hybrid initiative focused on practical support systems that strengthen local outcomes while advancing equity, access, and community resilience.
+            </p>
+            <div style="margin-top:10px;">
+              <a class="btn" href="https://nutmegproject.com" target="_blank" rel="noopener">Visit NutmegProject.com</a>
+            </div>
+          </div>
+
+          <div class="hero-actions" style="margin-top:14px">
+            <a class="btn btn-primary" href="#contact">Discuss a partnership</a>
+            <a class="btn" href="#contact">Speaking / panels</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT (your approved copy) -->
+    <section id="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>About</h2>
+          <div class="hint">Strategic thought leadership + applied execution.</div>
+        </div>
+
+        <div class="about">
+          <div>
+            <h2>Marceen A. Burgher, MBA, MHRM</h2>
+
+            <p>
+              Marceen A. Burgher, MBA, MHRM is a strategic thought leader and founder building AI-enabled talent intelligence systems designed to hold under pressure. Her work integrates behavioral science, human-centered data, and operational governance to reduce ambiguity and strengthen decision integrity across organizations.
+            </p>
+
+            <p>
+              As Founder & CEO of SkillVantage Enterprise, she is developing an AI product ecosystem rooted in Talent Intelligence—advancing SkillVantage’s mission to disrupt traditional HR models. This ecosystem includes an AI-powered Talent Database, Social Network Intelligence, a Coaching Platform, and a Learning Management System (LMS), serving as a blueprint for the next generation of workforce transformation. Complementing this work is her development of an AI-Powered Emergency Management Preparedness Scorecard, a dashboard designed to improve workforce readiness, compliance visibility, and operational resilience.
+            </p>
+
+            <p>
+              Her current research includes <strong>THE FUTURE OF TALENT INTELLIGENCE: A SkillVantage White Paper: How AI, Behavioral Science, and Human-Centered Data Will Redefine Workforces by 2030 and Beyond</strong>. She also advises small businesses and hybrid initiatives on execution-ready operational and business plans, aligning strategy, delivery, and capital readiness. Her IP roadmap includes patent-supported innovations such as SkillVantage’s Talent Intelligence AI, <strong>Cenna™</strong>, and related automation frameworks.
+            </p>
+
+            <p>
+              Marceen’s leadership and design approach are reinforced by her Working Genius in Discernment and Galvanizing, alongside CliftonStrengths in Achiever, Learner, Strategic, Responsibility, and Command—reflecting her role as a driving force behind intelligent talent strategy and applied automation.
+            </p>
+
+            <a class="btn" href="#contact" style="margin-top:6px">Contact / Inquiries</a>
+          </div>
+
+          <ul class="bullets" aria-label="Highlights">
+            <li>
+              <div class="k">Current Research</div>
+              <div class="v">THE FUTURE OF TALENT INTELLIGENCE (SkillVantage White Paper)</div>
+            </li>
+            <li>
+              <div class="k">AI Product Ecosystem</div>
+              <div class="v">Talent Database • Social Network Intelligence • Coaching Platform • LMS • AI Preparedness Scorecard</div>
+            </li>
+            <li>
+              <div class="k">IP Roadmap</div>
+              <div class="v">Cenna™ and related automation frameworks</div>
+            </li>
+            <li>
+              <div class="k">Assessments</div>
+              <div class="v">Working Genius: Discernment, Galvanizing • CliftonStrengths: Achiever, Learner, Strategic, Responsibility, Command</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (email button; no placeholder form text) -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <div class="hint">Direct inquiries</div>
+        </div>
+
+        <div class="band">
+          <p class="quote" style="font-size:22px">Contact Marceen Burgher</p>
+          <p class="sub">
+            For writing, speaking, advisory, or venture-related inquiries, use the button below. Messages are delivered directly.
+          </p>
+          <div class="hero-actions" style="margin-top:14px">
+            <a class="btn btn-primary" href="mailto:marceenburgher@gmail.com">Send a message</a>
+            <a class="btn" href="#top">Return to top</a>
+            <a class="btn" href="#about">Read About</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div class="small">© <span id="y"></span> Marceen Burgher • All original works and frameworks reserved.</div>
+        <div class="small">
+          <a href="#writing">Writing</a> · <a href="#frameworks">Frameworks</a> · <a href="#venture">Venture Work</a> · <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
