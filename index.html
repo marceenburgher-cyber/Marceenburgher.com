@@ -133,26 +133,26 @@
       gap: 34px;
       align-items:stretch;
     }
+
     /* Hero portrait */
-.hero-profile{
-  display:flex;
-  align-items:flex-start;
-  gap:24px;
-}
+    .hero-profile{
+      display:flex;
+      align-items:flex-start;
+      gap:24px;
+    }
+    .hero-photo{
+      width:170px;
+      min-width:170px;
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(7,18,14,.10);
+      box-shadow:0 18px 40px rgba(7,18,14,.18);
+    }
+    .hero-photo img{
+      width:100%;
+      display:block;
+    }
 
-.hero-photo{
-  width:170px;
-  min-width:170px;
-  border-radius:22px;
-  overflow:hidden;
-  border:1px solid rgba(7,18,14,.10);
-  box-shadow:0 18px 40px rgba(7,18,14,.18);
-}
-
-.hero-photo img{
-  width:100%;
-  display:block;
-}
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
       padding: 8px 12px;
@@ -381,6 +381,8 @@
       .cards{grid-template-columns: 1fr;}
       .row{grid-template-columns: 1fr;}
       .cta{display:none;}
+      .hero-profile{flex-direction:column;}
+      .hero-photo{width:190px; min-width:190px;}
     }
   </style>
 </head>
@@ -417,39 +419,35 @@
         <div class="hero-grid">
           <div>
             <div class="hero-profile">
+              <div class="hero-photo">
+                <img src="MarProfPic1.png" alt="Marceen Burgher">
+              </div>
 
-  <div class="hero-photo">
-    <img src="MarProfPic1.png" alt="Marceen Burgher">
-  </div>
+              <div>
+                <div class="kicker">
+                  <span class="dot" aria-hidden="true"></span>
+                  Founder • Author • Systems Builder
+                </div>
 
-  <div>
-    <div class="kicker">
-      <span class="dot" aria-hidden="true"></span>
-      Founder • Author • Systems Builder
-    </div>
+                <h1>I build systems that help people stop surviving and start functioning.</h1>
 
-    <h1>I build systems that help people stop surviving and start functioning.</h1>
-
-    <p class="lead">
-      My work spans writing, decision frameworks, and venture-building across HR, compliance,
-      workforce intelligence, and automation. The through-line is practical: clarity becomes protection.
-    </p>
-  </div>
-
-</div>
+                <p class="lead">
+                  My work spans writing, decision frameworks, and venture-building across HR, compliance,
+                  workforce intelligence, and automation. The through-line is practical: clarity becomes protection.
+                </p>
+              </div>
+            </div>
 
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#writing">Explore Writing</a>
+              <a class="btn btn-primary" href="#work">Explore Writing</a>
               <a class="btn" href="#about">About Marceen</a>
               <a class="btn" href="#contact">Request a Conversation</a>
             </div>
+
             <div class="quicklinks" aria-label="Quick links">
-    </div>
-  </div>
-</section>
-<a class="linkpill" href="#frameworks">Frameworks: S.I.G.H.™, T.I.C.K.™, NOVA™ <span class="arrow">→</span></a>
+              <a class="linkpill" href="#frameworks">Frameworks: S.I.G.H.™, T.I.C.K.™, NOVA™ <span class="arrow">→</span></a>
               <a class="linkpill" href="#venture">Founder Work: SkillVantage <span class="arrow">→</span></a>
-              <a class="linkpill" href="#writing">Book Excerpts & Essays <span class="arrow">→</span></a>
+              <a class="linkpill" href="#work">Books & Writing <span class="arrow">→</span></a>
             </div>
           </div>
 
@@ -514,50 +512,13 @@
         </div>
 
         <div class="cards">
-          <a class="card" href="#featured" aria-label="Writing">
+          <a class="card" href="#work" aria-label="Writing">
             <h3>Writing</h3>
             <p>Books, excerpts, and essays on power, boundaries, decision fatigue, and repair—written with precision and practical application.</p>
             <span class="go">Explore writing <span class="arrow">→</span></span>
           </a>
-              <!-- LIST OF WORK -->
-<section id="work">
-  <div class="container">
-    <div class="section-title">
-      <h2>Selected Works</h2>
-      <div class="hint">Published and upcoming writing across genres.</div>
-    </div>
 
-    <div class="band" style="background:rgba(255,255,255,.88);">
-
-      <p style="font-weight:800; margin-bottom:6px;">Published Work</p>
-      <p class="sub">
-        <strong>Patterns, Pain, and Power™: A Woman’s Guide to Choosing Herself</strong><br>
-        <strong>The Unavailable Guy Detox Guide™</strong> — Supplemental Workbook to Patterns, Pain, and Power<br>
-        <strong>Heaven Knows</strong><br>
-        <strong>Pentameters and Verses: Finding My Voice and Solace in Writing</strong>
-      </p>
-
-      <p style="font-weight:800; margin:18px 0 6px;">Coming Soon</p>
-      <p class="sub">
-        Monster in Me<br>
-        Music Notes That Healed Me
-      </p>
-
-      <p style="font-weight:800; margin:18px 0 6px;">Children’s Book Series</p>
-      <p class="sub">
-        <strong>Curry Pumpkin Pie™</strong><br>
-        <strong>Adventures of Curry Muffin Burgher — The Case of The Blue Guitar</strong><br>
-        <strong>The Golden Curtain</strong>
-      </p>
-
-      <p style="font-weight:800; margin:18px 0 6px;">Children’s Series — Coming Soon</p>
-      <p class="sub">
-        Inside the Shoe<br>
-        Snowflakes<br>
-        The Big Adventure<br>
-        The Mystery of The Two Little Teddy Bears
-      </p>
-      <a class="card" href="#frameworks" aria-label="Frameworks">
+          <a class="card" href="#frameworks" aria-label="Frameworks">
             <h3>Frameworks</h3>
             <p>Decision models such as S.I.G.H.™ that connect self-awareness, regulation, and action—built for real-life use, not theory.</p>
             <span class="go">Explore frameworks <span class="arrow">→</span></span>
@@ -606,6 +567,99 @@
               <div class="desc">An HR-tech and services ecosystem that centers governance, compliance visibility, and talent intelligence—powered by applied automation.</div>
             </div>
             <div><a href="#venture">See venture notes →</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED WORKS (LANDSCAPE, AFTER FEATURED) -->
+    <section id="work">
+      <div class="container">
+        <div class="section-title">
+          <h2>Selected Works</h2>
+          <div class="hint">Published and upcoming writing across genres.</div>
+        </div>
+
+        <div class="featured" role="list">
+          <div class="row" role="listitem">
+            <div><span class="tag">Published</span></div>
+            <div><div class="title">Patterns, Pain, and Power™: A Woman’s Guide to Choosing Herself</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Published</span></div>
+            <div>
+              <div class="title">The Unavailable Guy Detox Guide™</div>
+              <div class="desc">Supplemental Workbook to Patterns, Pain, and Power</div>
+            </div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Published</span></div>
+            <div><div class="title">Heaven Knows</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Published</span></div>
+            <div><div class="title">Pentameters and Verses: Finding My Voice and Solace in Writing</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Soon</span></div>
+            <div><div class="title">Monster in Me</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Soon</span></div>
+            <div><div class="title">Music Notes That Healed Me</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Children</span></div>
+            <div><div class="title">Curry Pumpkin Pie™</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Children</span></div>
+            <div><div class="title">Adventures of Curry Muffin Burgher — The Case of The Blue Guitar</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Children</span></div>
+            <div><div class="title">The Golden Curtain</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Soon</span></div>
+            <div><div class="title">Inside the Shoe</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Soon</span></div>
+            <div><div class="title">Snowflakes</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Soon</span></div>
+            <div><div class="title">The Big Adventure</div></div>
+            <div></div>
+          </div>
+
+          <div class="row" role="listitem">
+            <div><span class="tag">Soon</span></div>
+            <div><div class="title">The Mystery of The Two Little Teddy Bears</div></div>
+            <div></div>
           </div>
         </div>
       </div>
