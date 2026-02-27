@@ -133,6 +133,26 @@
       gap: 34px;
       align-items:stretch;
     }
+    /* Hero portrait */
+.hero-profile{
+  display:flex;
+  align-items:flex-start;
+  gap:24px;
+}
+
+.hero-photo{
+  width:170px;
+  min-width:170px;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(7,18,14,.10);
+  box-shadow:0 18px 40px rgba(7,18,14,.18);
+}
+
+.hero-photo img{
+  width:100%;
+  display:block;
+}
     .kicker{
       display:inline-flex; align-items:center; gap:10px;
       padding: 8px 12px;
@@ -396,12 +416,27 @@
       <div class="container">
         <div class="hero-grid">
           <div>
-            <div class="kicker"><span class="dot" aria-hidden="true"></span>Founder • Author • Systems Builder</div>
-            <h1>I build systems that help people stop surviving and start functioning.</h1>
-            <p class="lead">
-              My work spans writing, decision frameworks, and venture-building across HR, compliance, workforce intelligence, and automation.
-              The through-line is practical: clarity becomes protection.
-            </p>
+            <div class="hero-profile">
+
+  <div class="hero-photo">
+    <img src="marprofpic1.png" alt="Marceen Burgher">
+  </div>
+
+  <div>
+    <div class="kicker">
+      <span class="dot" aria-hidden="true"></span>
+      Founder • Author • Systems Builder
+    </div>
+
+    <h1>I build systems that help people stop surviving and start functioning.</h1>
+
+    <p class="lead">
+      My work spans writing, decision frameworks, and venture-building across HR, compliance,
+      workforce intelligence, and automation. The through-line is practical: clarity becomes protection.
+    </p>
+  </div>
+
+</div>
 
             <div class="hero-actions">
               <a class="btn btn-primary" href="#writing">Explore Writing</a>
@@ -702,6 +737,7 @@
   </script>
 </body>
 </html>
+
 
 
 
